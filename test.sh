@@ -1,27 +1,11 @@
 #!/bin/bash
-
-##### function definition
-function Help() {
-    echo "Welcome to the help page"
-    echo "l - list something"
+nbDig() {    
+    str=""
+    num=$1
+    while [[ $num -gt 0 || $num -eq 0 ]]; do
+        str="$str$((num ** 2))"
+        ((num--))
+    done
+    grep -o $2 <<< $str | wc -l    
 }
-
-name=World
-
-###### main program
-
-while getopts ":hn" option; do
-    case $option in
-        h) # help option
-            Help
-            exit;;
-        n) # input name
-            name=$OPTARG;;
-        \?) # invalid option
-            echo "Invalid options"
-            exit;;
-    esac
-done
-
-
-echo "Hello $name"
+nbDig $1 $2
