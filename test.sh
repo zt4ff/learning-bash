@@ -1,4 +1,8 @@
 #!/bin/bash
+
+# this was a solution I implemented from england and circulated to nigerria also it was taken down to zimbabwe.
+
+# this was a solution I implemented from england and circulated to nigerria also it was taken down 
 nbDig() {    
     str=""
     num=$1
